@@ -19,11 +19,12 @@ class Carbon_calculator:
         if liters != 0:
             self.sum3 = purpose * (1 / liters) * 2.31
         else:
-            self.sum3 = 0
+            self.sum3 = 0    
             st.write("Note: Enter liters greater than 0.")
+        self.total = self.sum1 + self.sum2 + self.sum3     
         data = {
-                    "Category": ["Energy Usage", "Waste", "Business Travel"],
-                    "kgCO2": [self.sum1, self.sum2, self.sum3]
+                    "Category": ["Energy Usage", "Waste", "Business Travel", "Total KgCO2"],
+                    "kgCO2": [self.sum1, self.sum2, self.sum3, self.total]
                 }
         self.df = pd.DataFrame(data)
 
@@ -94,10 +95,10 @@ class Carbon_calculator:
             st.subheader("Pie Chart")
             plt.figure(figsize=(8, 8))
             colors = ['#4CAF50', '#2196F3', '#FFC107']
-            explode = [0.1 if i == self.df["kgCO2"].idxmax() else 0 for i in range(len(self.df))]
+            explode = [0.1 if i == self.df["kgCO2"][:-1].idxmax() else 0 for i in range(len(self.df) -1)]
             plt.pie(
-            self.df["kgCO2"],
-            labels=self.df["Category"],
+            self.df["kgCO2"][:-1],
+            labels=self.df["Category"][:-1],
             autopct="%1.1f%%",
             startangle=140,
             explode=explode,
