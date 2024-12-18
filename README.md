@@ -42,6 +42,7 @@ This is a Streamlit based web application to calculate carbon emissions. This pr
 
 
 # Dependencies
+- Python
 - Streamlit
 - Pandas
 - Matplotlib
