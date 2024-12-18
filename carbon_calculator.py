@@ -69,7 +69,7 @@ class Carbon_calculator:
         pdf.image(temp_file_path, x=10, y=pdf.get_y(), w=190)
 
         # Save PDF
-        pdf_output = "./carbon_emission.pdf"
+        pdf_output = "./carbon_emission_report.pdf"
         pdf.output(pdf_output)
         with open(pdf_output, "rb") as file:
             st.download_button(
