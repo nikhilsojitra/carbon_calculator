@@ -1,0 +1,5 @@
+Streamlit
+Pandas
+Matplotlib
+FPDF
+Tempfile
