@@ -1,5 +1,6 @@
-Streamlit
-Pandas
-Matplotlib
-FPDF
-Tempfile
+-Python
+-Streamlit
+-Pandas
+-Matplotlib
+-FPDF
+-Tempfile
